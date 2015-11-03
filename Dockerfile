@@ -51,7 +51,7 @@ RUN apt-get update && \
 # Add line to php config to prevent blank page
 # Fix PHP CGI pathinfo
 RUN mkdir -p /www/munkireport && \
-	git clone https://bitbucket.org/mholtrlc/munkireport-php /www/munkireport && \
+	git clone https://github.com/munkireport/munkireport-php /www/munkireport && \
 	mkdir -p /etc/nginx/sites-enabled/ && \
 	rm -rf /etc/nginx/sites-enabled/* && \
 	rm -rf /etc/nginx/nginx.conf && \
