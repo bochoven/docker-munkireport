@@ -111,7 +111,7 @@ docker run -d --name munkireport \
   --link mr-mysql:mysql \
   -e MR_SITENAME="My Company" \
   -e MR_MODULES="array('munkireport','diskinfo','timemachine')" \
-  mholtrlc/munkireport
+  michaelholttech/docker-munkireport
 ```
 
 If you need proxy server support, either bake them into your Dockerfile, or provide them as environmentals when starting your container
