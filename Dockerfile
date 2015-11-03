@@ -52,6 +52,8 @@ RUN apt-get update && \
 # Fix PHP CGI pathinfo
 RUN mkdir -p /www/munkireport && \
 	git clone https://github.com/munkireport/munkireport-php /www/munkireport && \
+	cd /www/munkireport && \
+	git checkout wip && \
 	mkdir -p /etc/nginx/sites-enabled/ && \
 	rm -rf /etc/nginx/sites-enabled/* && \
 	rm -rf /etc/nginx/nginx.conf && \
