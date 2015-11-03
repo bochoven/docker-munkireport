@@ -42,6 +42,7 @@ RUN apt-get update && \
 	git \
 	php5-fpm \
 	php5-mysql \
+	php5-sqlite \
 	php5-ldap && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
