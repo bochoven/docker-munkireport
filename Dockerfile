@@ -61,6 +61,9 @@ RUN mkdir -p $APP_DIR && \
 	rm -rf /etc/nginx/nginx.conf && \
 	sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/fpm/php.ini
 
+# Symlink index.php
+RUN ln -sf $APP_DIR/index.php $WEBROOT/index.php
+
 # Add our config.php file and nginx configs
 ADD config.php $WEBROOT/config.php
 ADD munki-report.conf /etc/nginx/sites-enabled/munki-report.conf
