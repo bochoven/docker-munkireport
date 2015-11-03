@@ -3,13 +3,13 @@
 # Use the environmental variables passed to the Docker container and use them to:
 
 # Configure path to webapp
-sed -i "/APP_DIR/$APP_DIR" $WEBROOT/config.php
+sed -i -e "s%APP_DIR%$APP_DIR%g" $WEBROOT/config.php
 
 # Set correct permissions on database directory
 chown www-data $APP_DIR/app/db 
 
 # Add root user
-echo "\n\$auth_config['root'] = '$P$BUqxGuzR2VfbSvOtjxlwsHTLIMTmuw0';" >> $WEBROOT/config.php
+echo "$auth_config['root'] = '$P$BUqxGuzR2VfbSvOtjxlwsHTLIMTmuw0';" >> $WEBROOT/config.php
 
 
 # Fire up PHP and then start Nginx in non daemon mode so docker has something to keep running
