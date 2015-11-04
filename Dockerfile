@@ -64,6 +64,9 @@ RUN mkdir -p $APP_DIR && \
 # Symlink index.php
 RUN ln -sf $APP_DIR/index.php $WEBROOT/index.php
 
+# Symlink assets dir
+RUN ln -sf $APP_DIR/assets $WEBROOT/assets
+
 # Add our config.php file and nginx configs
 ADD config.php $APP_DIR/config.php
 ADD munki-report.conf /etc/nginx/sites-enabled/munki-report.conf
