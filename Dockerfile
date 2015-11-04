@@ -65,7 +65,7 @@ RUN mkdir -p $APP_DIR && \
 RUN ln -sf $APP_DIR/index.php $WEBROOT/index.php
 
 # Add our config.php file and nginx configs
-ADD config.php $WEBROOT/config.php
+ADD config.php $APP_DIR/config.php
 ADD munki-report.conf /etc/nginx/sites-enabled/munki-report.conf
 ADD nginx.conf /etc/nginx/nginx.conf
 
