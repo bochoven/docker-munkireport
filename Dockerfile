@@ -13,6 +13,7 @@ MAINTAINER Calum Hunter <calum.h@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set Env variables for Munki Report Config
+ENV VERSION v2.6.0
 ENV APP_DIR /home/munkireport
 ENV WEBROOT /www/munkireport
 ENV DB_NAME munkireport
@@ -57,7 +58,7 @@ RUN mkdir -p $APP_DIR && \
 	mkdir -p $WEBROOT && \
 	git clone https://github.com/munkireport/munkireport-php $APP_DIR && \
 	cd $APP_DIR && \
-	git checkout wip && \
+	git checkout tags/$VERSION && \
 	mkdir -p /etc/nginx/sites-enabled/ && \
 	rm -rf /etc/nginx/sites-enabled/* && \
 	rm -rf /etc/nginx/nginx.conf && \
