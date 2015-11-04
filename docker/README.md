@@ -1,4 +1,4 @@
-Munki Report PHP in a Container
+Munki Report PHP in a Container (WIP Version)
 =============
 
 This Docker image runs [MunkiReport PHP](https://github.com/munkireport/munkireport-php).
@@ -111,7 +111,7 @@ docker run -d --name munkireport \
   --link mr-mysql:mysql \
   -e MR_SITENAME="My Company" \
   -e MR_MODULES="array('munkireport','diskinfo','timemachine')" \
-  michaelholttech/docker-munkireport
+  michaelholttech/docker-munkireport:wip
 ```
 
 If you need proxy server support, either bake them into your Dockerfile, or provide them as environmentals when starting your container
