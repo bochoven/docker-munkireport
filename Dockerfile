@@ -70,16 +70,16 @@ RUN ln -sf $APP_DIR/index.php $WEBROOT/index.php
 RUN ln -sf $APP_DIR/assets $WEBROOT/assets
 
 # Add our config.php file and nginx configs
-ADD config.php $APP_DIR/config.php
-ADD munki-report.conf /etc/nginx/sites-enabled/munki-report.conf
-ADD nginx.conf /etc/nginx/nginx.conf
+ADD docker/config.php $APP_DIR/config.php
+ADD docker/munki-report.conf /etc/nginx/sites-enabled/munki-report.conf
+ADD docker/nginx.conf /etc/nginx/nginx.conf
 
 # Set up logs to output to stout and stderr
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
 	ln -sf /dev/stderr /var/log/nginx/error.log
 
 # Add our startup script
-ADD start.sh /start.sh
+ADD docker/start.sh /start.sh
 RUN chmod +x /start.sh
 
 # Expose Ports
