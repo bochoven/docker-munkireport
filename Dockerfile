@@ -56,7 +56,7 @@ RUN apt-get update && \
 RUN mkdir -p $APP_DIR && \
 	mkdir -p $WEBROOT && \
 	git clone https://github.com/munkireport/munkireport-php $APP_DIR && \
-	cd /www/munkireport && \
+	cd $APP_DIR && \
 	git checkout wip && \
 	mkdir -p /etc/nginx/sites-enabled/ && \
 	rm -rf /etc/nginx/sites-enabled/* && \
