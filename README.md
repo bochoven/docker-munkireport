@@ -117,4 +117,4 @@ docker run -d --name munkireport \
 If you need proxy server support, either bake them into your Dockerfile, or provide them as environmentals when starting your container
 by passing them with the -e flag, just like the variables shown above for the DB settings.
 
-###Thanks to [Calum Hunter]: https://github.com/hunty1/munkireport-docker for his original work on which this is based
+### Thanks to [Calum Hunter]: https://github.com/hunty1/munkireport-docker for his original work on which this is based
